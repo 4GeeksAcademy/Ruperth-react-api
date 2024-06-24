@@ -76,11 +76,14 @@ const Home = () => {
             .then(response => response.json())
             .then(data => {
                 console.log("Usuario creado:", data);
-                fetchGetTasks();
+                useEffect();
             })
             .catch(error => console.log(error));
     };
 
+    useEffect(() => {
+        fetchCreateUser();
+    }, []);
     useEffect(() => {
         fetchGetTasks();
     }, []);
